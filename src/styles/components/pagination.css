@@ -1,0 +1,24 @@
+.pagination {
+  @apply flex p-0 overflow-hidden list-none border border-gray-200 rounded;
+}
+.pagination__item {
+}
+.pagination__item--next {
+}
+.pagination__item--prev {
+}
+.pagination__item--current {
+}
+.pagination__link {
+  @apply block px-3 py-2 text-blue-500 border-r border-gray-200;
+}
+.pagination__link:hover {
+  @apply text-white no-underline bg-blue-500;
+}
+.pagination__item:last-child > .pagination__link {
+  @apply border-r-0;
+}
+.pagination__current,
+.pagination__elipsis {
+  @apply block px-3 py-2 text-gray-500 border-r border-gray-200;
+}

@@ -1,0 +1,17 @@
+<footer>
+	<div class="container mx-auto">
+		{{ function('dynamic_sidebar', 'sidebar-footer') }}
+		<img class="w-64 h-auto" src="{{ asset('images/logo.svg') }}"/>
+		<div id="copyright">
+			©{{ "now"|date("Y") }}
+			{{ theme.theme_mod('site_copyright_text', site.name) }}
+		</div>
+		{% if theme.theme_mod('site_footer_text') %}
+			<div id="site-info">
+				{{ theme.theme_mod('site_footer_text') }}
+			</div>
+		{% endif %}
+	</div>
+</footer>
+
+{{ function('wp_footer') }}

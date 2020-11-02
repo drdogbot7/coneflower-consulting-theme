@@ -1,0 +1,20 @@
+<!doctype html>
+<html {{ site.language_attributes }}>
+
+	{% include 'views/head.twig' %}
+
+	<body class="{{ body_class }} font-sans text-gray-800">
+
+		{% include 'views/header.twig' %}
+
+		<div class="container mx-auto" role="document">
+			<main>
+			{% block content %}{% endblock %}
+			</main>
+		</div>
+
+		{% include 'views/footer.twig' %}
+
+	</body>
+
+</html>
