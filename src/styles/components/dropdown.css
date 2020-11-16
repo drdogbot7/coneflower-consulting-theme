@@ -27,22 +27,3 @@
 .dropdown__link {
   display: block;
 }
-
-/*
-  Skin
-*/
-.dropdown__menu {
-  @apply shadow-md text-xs;
-}
-.dropdown__item {
-  width: 16rem;
-}
-.dropdown__link {
-  @apply bg-green-700 text-green-200;
-  @apply px-4 py-2;
-  transition: 0.1s;
-}
-.dropdown__link:hover {
-  @apply bg-green-600 text-white no-underline;
-  transition: 0.25s;
-}

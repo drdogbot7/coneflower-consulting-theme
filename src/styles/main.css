@@ -21,3 +21,10 @@
  * Custom Utilities
  */
 @import 'utilities/*.css';
+
+/**
+ * Alpine JS
+ */
+[x-cloak] {
+  display: none;
+}

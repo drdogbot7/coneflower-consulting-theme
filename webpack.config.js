@@ -23,7 +23,11 @@ Encore
    * ENTRY CONFIG
    */
   .addEntry('app', './src/index.js')
-  .addEntry('images', './src/images/index.js')
+  .addEntry('editor', './src/editor.js')
+
+  .copyFiles({
+    from: './src/images',
+  })
 
   // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
   .splitEntryChunks()

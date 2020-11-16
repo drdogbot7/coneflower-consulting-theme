@@ -1,37 +1,73 @@
-<header class="p-4 bg-white">
-    <div class="container flex items-center justify-between mx-auto">
-        <h1>
-            <a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
-                <img class="w-32 h-auto" src="{{ asset('images/logo.svg') }}" />
-            </a>
-        </h1>
-        <nav>
-            <ul class="navbar">
-                {% for item in menu.get_items %}
-                    {% if item.get_children %}
-                    <li class="navbar__item dropdown {{item.classes | join(' ')}}">
-                        <a class="navbar__link" href="{{item.get_link}}">
-                            {{item.title}}
-                        </a>
-                        <ul class="dropdown__menu">
-                            {% for child in item.get_children %}
-                                <li class="dropdown__item">
-                                    <a class="dropdown__link" href="{{child.get_link}}">
-                                        {{child.title}}
-                                    </a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                    {% else %}
-                    <li class="navbar__item {{item.classes | join(' ')}}">
-                        <a class="navbar__link" href="{{item.get_link}}">
-                            {{item.title}}
-                        </a>
-                    </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        </nav>
-    </div>
+<header class="p-4 bg-white" x-data="{ menuOpen: false }" x-on:keydown.escape="menuOpen = false">
+	<div class="flex items-center justify-between mx-auto">
+		<h1>
+			<a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
+				<img class="w-full h-auto" src="{{ asset('logo-flush-left.svg') }}" />
+			</a>
+		</h1>
+		<div class="flex ml-4 -mr-1 text-3xl">
+		<div class="mx-1">
+			<a href="https://www.facebook.com/coneflowerconsulting" title="{{ site.title }} Facebook Page">
+				<i class="text-brands-facebook hover:text-loud fab fa-facebook"></i>
+			</a>
+		</div>
+		<div class="mx-1">
+			<a href="https://www.instagram.com/coneflowerconsulting/" title="{{ site.title }} Instagram Page">
+				<i class="text-brands-instagram hover:text-loud fab fa-instagram"></i>
+			</a>
+		</div>
+		<div class="mx-1">
+			<a href="https://www.linkedin.com/company/coneflower-consulting/" title="{{ site.title }} LinkedIn Page">
+				<i class="text-brands-linkedin hover:text-loud fab fa-linkedin"></i>
+			</a>
+		</div>
+		<div class="mx-1 ml-4">
+			<button @click="menuOpen = true" aria-haspopup="true" aria-controls="navMenu">
+				<i class="text-primary hover:text-loud fas fa-bars"></i>
+			</button>
+		</div>
+		</div>
+	</div>
+
+	<div
+		id="navMenu"
+		class="fixed inset-0 flex items-center justify-center text-white bg-primary"
+		x-show.transition="menuOpen"
+		@click="menuOpen = false"
+		x-cloak
+	>
+		<div class="absolute top-0 right-0 p-4">
+			<button @click="menuOpen = false">
+				<i class="text-4xl fas fa-times-circle hover:text-secondary "></i>
+			</button>
+		</div>
+		<nav>
+			<ul class="text-center">
+				{% for item in menu.get_items %}
+					{% if item.get_children %}
+					<li class="text-2xl lg:text-3xl mt-2 {{item.classes | join(' ')}}">
+						<a class="p-1 hover:bg-loud" href="{{item.get_link}}">
+							{{item.title}}
+						</a>
+						<ul class="">
+							{% for child in item.get_children %}
+								<li class="text-lg lg:text-xl">
+									<a class="p-1 hover:bg-loud" href="{{child.get_link}}">
+										{{child.title}}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</li>
+					{% else %}
+					<li class="text-2xl lg:text-3xl mt-2 {{item.classes | join(' ')}}">
+						<a class="p-1 hover:bg-loud" href="{{item.get_link}}">
+							{{item.title}}
+						</a>
+					</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
 </header>

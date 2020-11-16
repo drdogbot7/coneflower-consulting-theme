@@ -1,15 +1,21 @@
 import jQuery from 'jquery';
-import toggleMenu from './components/toggleMenu';
+import WebFont from 'webfontloader';
 import { addBackToTop } from 'vanilla-back-to-top';
+import initFontAwesome from './components/fontAwesome';
+import alpine from 'alpinejs';
 
 import './styles/main.css';
 
+WebFont.load({
+  google: {
+    families: ['Raleway:100'],
+  },
+});
+
 const initPage = () => {
-	document.getElementById('hamburger').addEventListener('click', function () {
-		toggleMenu(this);
-	});
-	addBackToTop({ backgroundColor: '#008FD5' });
+  initFontAwesome();
+  addBackToTop({ backgroundColor: '#008FD5' });
 };
 
 /** Load Events */
-jQuery(document).ready(() => initPage());
+document.addEventListener('DOMContentLoaded', initPage());

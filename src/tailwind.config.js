@@ -1,33 +1,50 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('./tailwind.colors');
 
 module.exports = {
-	prefix: '',
-	important: false,
-	separator: ':',
-	theme: {
-		extend: {
-			colors: {
-				tint: {
-					10: '#FFFFFF19',
-					25: '#FFFFFF44',
-					50: '#FFFFFF88',
-					75: '#FFFFFFCC',
-					90: '#FFFFFFE6',
-				},
-				shade: {
-					10: '#00000019',
-					25: '#00000044',
-					50: '#00000088',
-					75: '#000000CC',
-					90: '#000000E6',
-				},
-			},
-		},
-	},
-	variants: {},
-	corePlugins: {},
-	plugins: [require('@tailwindcss/custom-forms')],
-	purge: {
-		content: ['./views/**/*.twig'],
-	},
+  theme: {
+    /**
+     * Use Wordpress Breakpoints
+     * https://github.com/WordPress/gutenberg/blob/master/packages/base-styles/_breakpoints.scss
+     */
+    screens: {
+      sm: '600px',
+      md: '782px',
+      lg: '960px',
+      xl: '1080px',
+      wide: '1280px',
+      huge: '1440px',
+    },
+    container: {
+      center: true,
+      padding: '1rem',
+    },
+    extend: {
+      fontFamily: {
+        display: ['Raleway', 'sans-serif'],
+      },
+      colors: {
+        tint: colors.tint,
+        shade: colors.shade,
+        orange: colors.orange,
+        purple: colors.purple,
+        lime: colors.lime,
+        brands: colors.brands,
+        primary: colors.purple['500'],
+        secondary: colors.lime['500'],
+        loud: colors.orange['500'],
+        light: defaultTheme.colors.gray['200'],
+        dark: defaultTheme.colors.gray['800'],
+      },
+    },
+  },
+  variants: {},
+  corePlugins: {},
+  plugins: [
+    require('@tailwindcss/custom-forms'),
+    require('@tailwindcss/typography'),
+  ],
+  purge: {
+    content: ['./views/**/*.twig'],
+  },
 };

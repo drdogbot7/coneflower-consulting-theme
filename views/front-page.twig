@@ -1,0 +1,21 @@
+{% extends "views/base.twig" %}
+
+{% block content %}
+
+  <div class="py-16 text-white md:py-24 lg:py-48 bg-primary">
+    <div class="container">
+      <div class="text-3xl font-hairline leading-tight md:text-4xl lg:text-6xl font-display">
+        Empowering Creative Non-Profits throughout the Midwest
+      </div>
+    </div>
+  </div>
+
+  {% for post in posts %}
+
+    <div class="container my-8 prose"> 
+      {{ post.content }}
+    </div>
+
+  {% endfor %}
+
+{% endblock %}
