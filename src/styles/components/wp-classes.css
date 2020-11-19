@@ -5,23 +5,23 @@
 
 /* Media alignment */
 .alignnone {
-  max-width: 100%;
-  height: auto;
-  margin-right: 0;
-  margin-left: 0;
+	max-width: 100%;
+	height: auto;
+	margin-right: 0;
+	margin-left: 0;
 }
 .aligncenter {
-  display: block;
-  height: auto;
-  margin: 0.5rem auto;
+	display: block;
+	height: auto;
+	margin: 0.5rem auto;
 }
 .alignleft {
-  float: left;
-  margin-right: 0.5rem;
+	margin-right: 0.5rem;
+	float: left;
 }
 .alignright {
-  float: right;
-  margin-left: 0.5rem;
+	margin-left: 0.5rem;
+	float: right;
 }
 
 /* Captions */
@@ -39,3 +39,7 @@
 .wp-caption-text {
   @extend .figure-caption;
 } */
+
+.menu-item-heading > a {
+	pointer-events: none;
+}

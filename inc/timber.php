@@ -28,7 +28,10 @@ class SalviaTheme extends TimberSite
     {
 
         /* Add extra data */
-        $context['foo'] = 'I am some other typical value set in your functions.php file, unrelated to the menu';
+        if (defined('WP_DEBUG') && true === WP_DEBUG) {
+            $context['debug'] = true;
+        }
+        
 
         /* Menu */
         $context['menu'] = new TimberMenu('primary_navigation');

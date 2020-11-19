@@ -1,0 +1,5 @@
+.bg-brand {
+	background-image: url(../images/hero-animation.svg);
+	background-position: center;
+	background-size: cover;
+}

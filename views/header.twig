@@ -1,5 +1,5 @@
-<header class="p-4 bg-white" x-data="{ menuOpen: false }" x-on:keydown.escape="menuOpen = false">
-	<div class="flex items-center justify-between mx-auto">
+<header x-data="{ menuOpen: false }" x-on:keydown.escape="menuOpen = false">
+	<div class="flex items-center justify-between p-4 bg-light md:bg-white">
 		<h1>
 			<a href="{{ site.url }}" title="{{ site.name }}" alt="{{ site.name }} logo">
 				<img class="w-full h-auto" src="{{ asset('logo-flush-left.svg') }}" />
@@ -21,9 +21,9 @@
 				<i class="text-brands-linkedin hover:text-loud fab fa-linkedin"></i>
 			</a>
 		</div>
-		<div class="mx-1 ml-4">
+		<div class="mx-1 ml-4 md:hidden">
 			<button @click="menuOpen = true" aria-haspopup="true" aria-controls="navMenu">
-				<i class="text-primary hover:text-loud fas fa-bars"></i>
+				<i class="text-primary hover:text-loud fal fa-bars"></i>
 			</button>
 		</div>
 		</div>
@@ -38,7 +38,7 @@
 	>
 		<div class="absolute top-0 right-0 p-4">
 			<button @click="menuOpen = false">
-				<i class="text-4xl fas fa-times-circle hover:text-secondary "></i>
+				<i class="text-4xl fal fa-times-circle hover:text-secondary "></i>
 			</button>
 		</div>
 		<nav>
@@ -70,4 +70,35 @@
 			</ul>
 		</nav>
 	</div>
+	
+	<nav class="hidden bg-light md:block">
+		<ul class="navbar">
+			{% for item in menu.get_items %}
+				{% if item.get_children %}
+				<li class="navbar__item dropdown {{item.classes | join(' ')}}">
+					<a class="navbar__link" href="{{item.get_link}}">
+						{{item.title}}
+						<i class="ml-2 fal fa-angle-down text-primary"></i>
+					</a>
+					<ul class="dropdown__menu">
+						{% for child in item.get_children %}
+							<li class="dropdown__item">
+								<a class="dropdown__link" href="{{child.get_link}}">
+									{{child.title}}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+				{% else %}
+				<li class="navbar__item {{item.classes | join(' ')}}">
+					<a class="navbar__link" href="{{item.get_link}}">
+						{{item.title}}
+					</a>
+				</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+	
 </header>

@@ -1,7 +1,7 @@
 {
   "extends": [
     "stylelint-config-wordpress",
-    "stylelint-config-rational-order",
+    "stylelint-config-idiomatic-order",
     "stylelint-config-prettier"
   ],
   "rules": {

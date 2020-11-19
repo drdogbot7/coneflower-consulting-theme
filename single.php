@@ -1,4 +1,10 @@
 <?php
-$context = Timber::get_context();
+$context         = Timber::context();
+$timber_post     = Timber::get_post();
+$context['post'] = $timber_post;
 
-Timber::render('views/single.twig', $context);
+if ( post_password_required( $timber_post->ID ) ) {
+	Timber::render( array('single-password.twig', 'single.twig'), $context );
+} else {
+	Timber::render( array( 'single-' . $timber_post->ID . '.twig', 'single-' . $timber_post->post_type . '.twig', 'single-' . $timber_post->slug . '.twig', 'single.twig' ), $context );
+}

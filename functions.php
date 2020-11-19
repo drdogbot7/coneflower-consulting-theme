@@ -17,6 +17,7 @@
 $salvia_includes = [
   'inc/assets.php',     // Asset function
   'inc/setup.php',      // Theme setup
+  'inc/block_editor.php',      // Theme setup
   'inc/titles.php',     // Page titles
   'inc/images.php',     // custom image sizes
   'inc/timber.php',     // Twig magic
