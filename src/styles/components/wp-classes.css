@@ -43,3 +43,10 @@
 .menu-item-heading > a {
 	pointer-events: none;
 }
+
+.read-more {
+	color: theme('colors.purple.500');
+}
+.read-more:hover {
+	text-decoration: underline;
+}

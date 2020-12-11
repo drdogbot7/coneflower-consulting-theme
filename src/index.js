@@ -8,13 +8,13 @@ import './styles/main.css';
 
 WebFont.load({
 	google: {
-		families: ['Raleway:100'],
+		families: ['Raleway:200,400'],
 	},
 });
 
 const initPage = () => {
 	initFontAwesome();
-	addBackToTop({ backgroundColor: '#008FD5' });
+	addBackToTop({ backgroundColor: '#4F3590' });
 };
 
 /** Load Events */

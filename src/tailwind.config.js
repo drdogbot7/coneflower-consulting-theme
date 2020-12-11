@@ -3,9 +3,6 @@ const colors = require('./tailwind.colors');
 const gutenberg = require('tailwindcss-gutenberg-theme');
 
 module.exports = {
-	future: {
-		purgeLayersByDefault: true,
-	},
 	theme: {
 		/**
 		 * Use Wordpress Breakpoints
@@ -101,8 +98,11 @@ module.exports = {
 				light: defaultTheme.colors.gray['200'],
 				dark: defaultTheme.colors.gray['800'],
 			},
+			boxShadow: {
+				brand: `10px 10px 0 ${colors.purple['500']}, 0 25px 50px -12px rgba(0, 0, 0, 0.25)`,
+			},
 			typography: {
-				default: {
+				DEFAULT: {
 					css: {
 						maxWidth: null,
 						h1: {
@@ -133,7 +133,7 @@ module.exports = {
 	variants: {},
 	corePlugins: {},
 	plugins: [
-		require('@tailwindcss/custom-forms'),
+		require('@tailwindcss/forms'),
 		require('@tailwindcss/typography')(),
 		// Block Editor Color Palette utilities
 		gutenberg.colors,

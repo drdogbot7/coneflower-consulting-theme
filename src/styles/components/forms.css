@@ -1,0 +1,22 @@
+[multiple],
+[type='date'],
+[type='datetime-local'],
+[type='email'],
+[type='month'],
+[type='number'],
+[type='password'],
+[type='search'],
+[type='tel'],
+[type='text'],
+[type='time'],
+[type='url'],
+[type='week'],
+select,
+textarea {
+	@apply border-gray-300 rounded-sm shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50;
+}
+
+[type='checkbox'],
+[type='radio'] {
+	color: theme('colors.orange.500');
+}
