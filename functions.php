@@ -16,6 +16,7 @@
 
 $salvia_includes = [
   'inc/assets.php',     // Asset function
+  'inc/pre_get_posts.php',  
   'inc/setup.php',      // Theme setup
   'inc/block_editor.php',      // Theme setup
   'inc/titles.php',     // Page titles

@@ -1,0 +1,21 @@
+{% extends "views/base.twig" %}
+
+{% block content %}
+
+<div class="container">
+
+    {% for post in posts %}
+
+        {% include "views/content-people.twig" with {post: post}  %}
+
+        {% if post != posts|last %}
+        
+        <hr class="my-12">
+
+        {% endif %}
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
