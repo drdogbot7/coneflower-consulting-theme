@@ -125,6 +125,7 @@ module.exports = {
 							textIndent: '5ch',
 							marginTop: '-1.25em',
 						},
+						blockquote: null,
 					},
 				},
 			},
