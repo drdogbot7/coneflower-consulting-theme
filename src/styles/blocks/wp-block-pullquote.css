@@ -1,0 +1,36 @@
+.wp-block-pullquote blockquote {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 3em;
+	border-left: 4px solid theme('colors.purple.300');
+	font-family: theme('fontFamily.serif');
+}
+
+.wp-block-pullquote blockquote p {
+	font-size: theme('fontSize.2xl');
+}
+
+.wp-block-pullquote blockquote p:first-child {
+	margin-top: 0;
+}
+
+.wp-block-pullquote blockquote cite {
+	font-family: theme('fontFamily.sans');
+}
+
+.wp-block-pullquote.is-style-default {
+	text-align: inherit;
+}
+
+/*
+  Solid style
+*/
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote cite {
+	display: block;
+	margin-top: 1em;
+	text-align: right;
+}

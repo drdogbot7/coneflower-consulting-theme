@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('./tailwind.colors');
+const typography = require('./tailwind.typography');
 const gutenberg = require('tailwindcss-gutenberg-theme');
 
 module.exports = {
@@ -18,6 +19,7 @@ module.exports = {
 			center: true,
 			padding: '1rem',
 		},
+		typography,
 		gutenberg: (theme) => ({
 			colors: {
 				primary: theme('colors.primary'),
@@ -95,38 +97,8 @@ module.exports = {
 				primary: colors.purple['500'],
 				secondary: colors.lime['500'],
 				loud: colors.orange['500'],
-				light: defaultTheme.colors.gray['200'],
+				light: defaultTheme.colors.gray['100'],
 				dark: defaultTheme.colors.gray['800'],
-			},
-			boxShadow: {
-				brand: `10px 10px 0 ${colors.purple['500']}, 0 25px 50px -12px rgba(0, 0, 0, 0.25)`,
-			},
-			typography: {
-				DEFAULT: {
-					css: {
-						maxWidth: null,
-						h1: {
-							color: colors.purple[600],
-							fontWeight: '100',
-						},
-						h2: {
-							color: colors.purple[600],
-							fontWeight: '100',
-						},
-						h3: {
-							color: colors.purple[600],
-							fontWeight: '100',
-						},
-						h4: {
-							color: colors.purple[600],
-							fontWeight: '100',
-						},
-						'p+p': {
-							textIndent: '5ch',
-							marginTop: '-1.25em',
-						},
-					},
-				},
 			},
 		},
 	},
@@ -154,8 +126,7 @@ module.exports = {
 		layers: ['utilities'],
 		content: ['./views/**/*.twig'],
 		options: {
-			whitelist: ['mt-4'],
-			whitelistPatterns: [/has-/],
+			safelist: ['mt-4'],
 		},
 	},
 };

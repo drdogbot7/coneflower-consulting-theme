@@ -52,7 +52,7 @@
 		"alpinejs": "^2.7.3",
 		"eslint-plugin-prettier": "^3.1.4",
 		"jquery": "^3.4.1",
-		"tailwindcss": "^2.0.0",
+		"tailwindcss": "^2.0.2",
 		"tailwindcss-gutenberg-theme": "https://github.com/drdogbot7/tailwindcss-gutenberg.git",
 		"vanilla-back-to-top": "^7.2.1",
 		"webfontloader": "^1.6.28"

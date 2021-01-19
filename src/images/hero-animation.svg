@@ -3,7 +3,7 @@
     <style type="text/css">
       .circle {
         fill: none;
-        stroke: #E66A2C0C;
+        stroke: #E66A2C1C;
         stroke-miterlimit: 10;
         stroke-width: 10px;
         animation-name: rotationCircle;
@@ -14,7 +14,7 @@
       }
 
       .outer {
-        fill: #FFFFFF0C;
+        fill: #FFFFFF1C;
         animation-name: rotationInner;
         animation-duration: 40s;
         animation-iteration-count:infinite;
@@ -23,7 +23,7 @@
       }
 
       .inner {
-        fill: #CCDB290C;
+        fill: #CCDB291C;
         animation-name: rotationOuter;
         animation-duration: 90s;
         animation-iteration-count:infinite;

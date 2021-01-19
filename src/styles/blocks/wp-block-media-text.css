@@ -1,0 +1,5 @@
+@screen sm {
+	.wp-block-media-text__content > :first-child {
+		margin-top: 0;
+	}
+}
