@@ -10,11 +10,12 @@ import {
 	faBars,
 	faTimesCircle,
 	faAngleDown,
+	faPhone,
 } from '@fortawesome/pro-light-svg-icons';
 
 const initFontAwesome = () => {
 	library.add(faFacebook, faLinkedin, faInstagram);
-	library.add(faBars, faTimesCircle, faAngleDown);
+	library.add(faBars, faTimesCircle, faAngleDown, faPhone);
 	dom.watch();
 };
 
