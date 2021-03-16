@@ -1,0 +1,34 @@
+/*
+ * Tailwind Base Styles
+ */
+
+/* @import 'tailwindcss/base.css'; */
+
+/* @import 'tailwindcss/components.css'; */
+
+/*
+ * Theme Styles
+ */
+@import 'common/*.css';
+@import 'blocks/*.css';
+@import 'components/*.css';
+@import 'vendor/*.css';
+
+/*
+ * Tailwind Utilities
+ */
+@import 'tailwindcss/utilities.css';
+
+/*
+ * Custom Utilities
+ */
+
+@import 'utilities/*.css';
+
+.editor-styles-wrapper {
+	font-family: theme('fontFamily.sans') !important;
+}
+
+.wp-block {
+	max-width: 1280px;
+}
